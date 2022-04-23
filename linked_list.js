@@ -35,7 +35,7 @@ class LinkedList {
       this.insertAtFirst(number);
       return;
     } else if (index === this.length) {
-      this.#append(number);
+      this.append(number);
       return;
     } else if (index > this.length) {
       return `index out of bound from ${0} to ${this.length - 1}`;
@@ -149,17 +149,6 @@ list.remove(3);
 // list.add_at(2, 14);
 // list.add_at(3, 20);
 // list.add_at(4, 16);
-
-// let node = new Node(5);
-// let anotherNode = new Node(10);
-// node.next_node = anotherNode
-// console.log(node)
-// node.next_node = null;
-// console.log(anotherNode)
-
-// node = anotherNode
-// node = null
-// console.log(anotherNode)
 
 for (var i = 0; i < list.length; i++) {
   console.log(list.get(i));
