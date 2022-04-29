@@ -69,12 +69,10 @@ class LinkedList {
       return "List is empty";
     } else if (index === this.length) {
       return `index out of bound: ${0} to ${this.length - 1}`;
-    }
-    else if(index === this.length - 1) {
-      return this.getLast()
-    }
-    else if(index === 0) {
-      return this.getFirst()
+    } else if (index === this.length - 1) {
+      return this.getLast();
+    } else if (index === 0) {
+      return this.getFirst();
     }
     while (current !== null) {
       if (iterator === index) {
@@ -107,16 +105,19 @@ class LinkedList {
       let prev = this.#getNode(index - 1);
       prev.next_node = prev.next_node.next_node;
     }
-    this.length--;
   }
   removeLast() {
+    console.log(this.length);
     let temp = this.#getNode(this.length - 2);
+    console.log(temp);
     temp.next_node = temp.next_node.next_node;
     this.tail = temp;
+    this.length--;
   }
 
   removeFirst() {
     this.head = this.head.next_node;
+    this.length--;
   }
 
   #getNode(index) {
@@ -137,13 +138,10 @@ const list = new LinkedList(new Node());
 list.add(3);
 list.add(5);
 list.add(3);
-list.add(5);
-list.add(3);
-list.add(5);
-list.add(7);
-list.add(15);
-list.remove(3);
 
+list.removeLast();
+
+list.removeLast();
 // list.add_at(0, 10);
 // list.add_at(list.length, 12);
 // list.add_at(2, 14);
