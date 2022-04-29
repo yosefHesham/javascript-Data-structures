@@ -98,12 +98,13 @@ class LinkedList {
       return `index out of bound: ${0} to ${this.length - 1}`;
     }
     if (index === 0) {
-      this.removeFirst();
+      return his.removeFirst();
     } else if (index === this.length - 1) {
-      this.removeLast();
+      return this.removeLast();
     } else {
       let prev = this.#getNode(index - 1);
       prev.next_node = prev.next_node.next_node;
+      this.length++;
     }
   }
   removeLast() {
