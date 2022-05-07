@@ -108,11 +108,15 @@ class LinkedList {
     }
   }
   removeLast() {
-    console.log(this.length);
-    let temp = this.#getNode(this.length - 2);
-    console.log(temp);
-    temp.next_node = temp.next_node.next_node;
-    this.tail = temp;
+    if (this.head.next_node === null) {
+      this.head = null;
+      this.tail = this.head;
+    } else {
+      let temp = this.#getNode(this.length - 2);
+      console.log(temp);
+      temp.next_node = temp.next_node.next_node;
+      this.tail = temp;
+    }
     this.length--;
   }
 
@@ -143,6 +147,8 @@ list.add(3);
 list.removeLast();
 
 list.removeLast();
+list.removeLast();
+
 // list.add_at(0, 10);
 // list.add_at(list.length, 12);
 // list.add_at(2, 14);
